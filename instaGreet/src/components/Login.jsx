@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 
 
-const Login = ( {setAuth} ) => {
+const Login = ({ setAuth }) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
@@ -13,7 +13,7 @@ const Login = ( {setAuth} ) => {
         console.log(username)
         console.log(password)
         axios
-          .post('https://social-cards.fly.dev/auth/token/login', {
+          .post('https://social-cards.fly.dev/api/auth/token/login', {
             username: username,
             password: password,
           })

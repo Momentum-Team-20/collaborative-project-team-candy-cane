@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 const Card = () =>{
-const [cardInfo, setCardInfo] = useState([])
+
 
 // useEffect((e) => {
 //     e.preventDefault()
