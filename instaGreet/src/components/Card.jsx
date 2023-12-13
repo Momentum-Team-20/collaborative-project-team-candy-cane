@@ -1,9 +1,22 @@
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Card = () =>{
+const [cardInfo, setCardInfo] = useState([])
+
+// useEffect((e) => {
+//     e.preventDefault()
+//     axios.get("https://social-cards.fly.dev/api/cards").then((res) => {
+//         setCardInfo(res.data)
+//         console.log(res.data)
+//     } )
+// })
 
     return(
         <>
-            <p>This is a card</p>
+            <div className="outerCardDiv">
+                <p className="frontCardText">Merry Christmas ya Filthy Animals!</p>
+            </div>
         </>
     )
 }
