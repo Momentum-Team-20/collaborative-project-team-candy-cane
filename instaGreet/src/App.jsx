@@ -1,20 +1,19 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import './App.css'
-import MainFeed from './components/MainFeed'
-import NavBar from './components/NavBar'
-import Login from './components/Login'
+import { useState, useEffect } from "react";
+import "./App.css";
+import MainFeed from "./components/MainFeed";
+import NavBar from "./components/NavBar";
+import Login from "./components/Login";
 
 function App() {
-  const [token, setToken] = useState(null)
-  const [username, setUsername] = useState('')
-  const [cardInfo, setCardInfo] = useState([])
+  const [token, setToken] = useState(null);
+  const [username, setUsername] = useState("");
+  const [cardInfo, setCardInfo] = useState([]);
 
   const setAuth = (username, token) => {
-    setUsername(username)
-    setToken(token)
-    console.log(token)
-  }
+    setUsername(username);
+    setToken(token);
+    console.log(token);
+  };
 
   // useEffect(() => {
   //   axios
@@ -30,15 +29,9 @@ function App() {
 
   return (
     <>
-      <NavBar
-
-      />
-      <Login 
-        setAuth={setAuth}
-      />
-      <MainFeed
-      token={token}
-      />
+      <NavBar />
+      <Login setAuth={setAuth} />
+      <MainFeed token={token} />
       {/* <h1>Cards</h1>
       {token ? (
         <ul>
@@ -50,8 +43,8 @@ function App() {
       <Login 
         setAuth={setAuth}/>
         )} */}
-        </>
-  )
+    </>
+  );
 }
 
-export default App
+export default App;
