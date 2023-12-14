@@ -38,10 +38,15 @@ const Register = () => {
     return (
         <>
             <h1>New User Registration</h1>
+            <p>Enter your email address:</p>
+            <label for='email'>
+                <p>Email:</p>
+                <input type="email" name="email"></input>
+            </label>
             <p>Please type a username and password: </p>
             <label for='userName'>    
                 <p>Username:</p>
-                <input type='text' name='userName' onChange={updateUserName}></input>
+                <input type='text' name='userName' onChange={updateUserName} required></input>
             </label>
             <label for='password'>    
                 <p>Password:</p>
