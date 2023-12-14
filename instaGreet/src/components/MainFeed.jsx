@@ -29,8 +29,8 @@ const MainFeed = ({ token }) => {
 
   return (
     <>
-      <h1>Cards</h1>
       <Register />
+      <h1>Cards</h1>
       {token && (
         <div>
           {/* // <p>{cardInfo}</p> */}

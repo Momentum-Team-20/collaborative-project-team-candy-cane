@@ -8,7 +8,12 @@ const Register = () => {
 
     //Perform Post request to databate to add new user and username and password
     const submitToDB = () => {
-        //Submit post to DB on click
+        if (newUserName || newPassword || confNewPassword === '') {
+            alert("Please input a username and password!")
+        }
+        if (newPassword != confNewPassword) {
+            alert("Your Passwords Do Not Match!!!")
+        }
     }
 
 
@@ -40,14 +45,14 @@ const Register = () => {
             </label>
             <label for='password'>    
                 <p>Password:</p>
-                <input type='text' name='password' onChange={updatePassword}></input>
+                <input type='password' name='password' onChange={updatePassword}></input>
             </label>
             <label for='confPass'>    
                 <p>Confirm Password:</p>
-                <input type='text' name='confPassword' onChange={updatePasswordConf}></input>
+                <input type='password' name='confPassword' onChange={updatePasswordConf}></input>
             </label>
             <br></br>
-            <button onClick='submitToDB'>Submit</button>
+            <button onClick={submitToDB}>Submit</button>
         </>
     )
 
