@@ -65,3 +65,8 @@
   font-weight: bold;
   text-align: center;
 }
+
+.logInBar {
+  display: flex;
+  justify-content: space-between;
+}

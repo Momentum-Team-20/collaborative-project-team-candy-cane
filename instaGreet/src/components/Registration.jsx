@@ -79,6 +79,7 @@ const Register = () => {
             </label>
             <br></br>
             <button onClick={submitToDB}>Submit</button>
+            <p>Already have an account?  Log in here: <a href="/login">Login</a></p>
         </>
     )
 

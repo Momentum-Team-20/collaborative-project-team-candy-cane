@@ -52,6 +52,7 @@ const Login = ({ setAuth, setLoggedIn }) => {
           <input type="submit" value="Log In" />
         </div>
       </form>
+      <p>New User?  Create an account here: <a href="/register">Registration</a></p>
     </>
     )
 }

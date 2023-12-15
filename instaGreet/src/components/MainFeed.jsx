@@ -47,10 +47,9 @@ const MainFeed = ({ token, loggedIn }) => {
       {!loggedIn ?  
         <div className='logInBar'>
           <a href="/login">Log In</a>
-          <a>Register</a>
+          <a href="/register">Register</a>
         </div>:
       <NavBar />}
-      <Register />
       <h1>Cards</h1>
       {token && (
         <div>
