@@ -1,15 +1,25 @@
 import { useState } from 'react'
 import axios from 'axios'
 
+//TODO: Add email validation to ensure input is an email
+// Add post request, and validation to ensure username isn't taken and email not already in use
+
 const Register = () => {
     const [newUserName, setNewUserName] = useState('')
     const [newPassword, setNewPassword] = useState('')
     const [confNewPassword, setConfNewPassword] = useState('')
+    const [email, setEmail] = useState('')
 
     //Perform Post request to databate to add new user and username and password
     const submitToDB = () => {
-        if (newUserName || newPassword || confNewPassword === '') {
-            alert("Please input a username and password!")
+        if (newUserName === '') {
+            alert("Please input a username!")
+        }
+        if (newPassword === '') {
+            alert("Please input a password!")
+        }
+        if (confNewPassword === '') {
+            alert("Please confirm your password!")
         }
         if (newPassword != confNewPassword) {
             alert("Your Passwords Do Not Match!!!")
@@ -35,13 +45,19 @@ const Register = () => {
         setConfNewPassword(newLetter)
     }
 
+    //Update state to hold email when typed
+    const updateEmail = (event) => {
+        const newChar = event.target.value 
+        setEmail(newChar)
+    }
+
     return (
         <>
             <h1>New User Registration</h1>
             <p>Enter your email address:</p>
             <label for='email'>
                 <p>Email:</p>
-                <input type="email" name="email"></input>
+                <input type="email" name="email" onChange={updateEmail}></input>
             </label>
             <p>Please type a username and password: </p>
             <label for='userName'>    
