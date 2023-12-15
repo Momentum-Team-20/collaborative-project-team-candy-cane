@@ -15,6 +15,7 @@
   margin: 5px;
   height: 160px;
   width: 180px;
+  text-align: center;
 }
 
 .outerCardDiv
@@ -34,4 +35,33 @@
 
 .blue {
   background-color: blue;
+}
+
+/* User Page CSS */
+
+.userPageTitle, .userPageFollowingText {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.userPagecreateCardButton {
+  text-align: center;
+  font-weight: bold;
+  font-size: x-large;
+  border: 1px solid black;
+  height: 300px;
+  width: 300px;
+  padding: 0;
+
+}
+
+.userCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  /* the styling below is just to make it pretty in our preview and should be defined by the user instead */
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-align: center;
 }
