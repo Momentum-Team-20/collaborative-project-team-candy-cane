@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import validator from 'validator'
 
-//TODO: Add email validation to ensure input is an email
+//TODO:
 // Add post request, and validation to ensure username isn't taken and email not already in use
 
 const Register = () => {
