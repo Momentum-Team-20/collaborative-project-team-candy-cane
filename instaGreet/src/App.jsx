@@ -10,6 +10,7 @@ function App() {
   const [token, setToken] = useState(null);
   const [username, setUsername] = useState("");
   const [cardInfo, setCardInfo] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
   
 
   const setAuth = (username, token) => {
@@ -36,9 +37,9 @@ function App() {
       <Routes>
         <Route 
           path="/"
-          element={<MainFeed token={token} />}
+          element={<MainFeed token={token} loggedIn={loggedIn} />}
         />
-        <Route path="/login" element={<Login setAuth={setAuth}/>} />
+        <Route path="/login" element={<Login setAuth={setAuth} setLoggedIn={setLoggedIn} />} />
         <Route path="/register" element={<Register />} />
       </Routes>
       {/* <h1>Cards</h1>

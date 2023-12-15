@@ -8,11 +8,11 @@ import Register from './Registration'
 import NavBar from "./NavBar";
 
 
-const MainFeed = ({ token }) => {
+const MainFeed = ({ token, loggedIn }) => {
   const [cardInfo, setCardInfo] = useState([]);
   // const [token, setToken] = useState(null)
   const [username, setUsername] = useState("");
-  // const [loggedIn, setLoggedIn] = useState(false)
+
   
 
   console.log(`this is main feed ${token}`);
@@ -25,7 +25,6 @@ const MainFeed = ({ token }) => {
         },
       })
       .then((res) => {
-        setLoggedIn(true);
         setCardInfo(res.data.results);
       });
   }, [token]);
@@ -45,7 +44,12 @@ const MainFeed = ({ token }) => {
 
   return (
     <>
-      <NavBar />
+      {!loggedIn ?  
+        <div className='logInBar'>
+          <a href="/login">Log In</a>
+          <a>Register</a>
+        </div>:
+      <NavBar />}
       <Register />
       <h1>Cards</h1>
       {token && (
