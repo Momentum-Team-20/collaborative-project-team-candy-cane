@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import axios from 'axios'
+import validator from 'validator'
 
 //TODO: Add email validation to ensure input is an email
 // Add post request, and validation to ensure username isn't taken and email not already in use
@@ -23,6 +24,9 @@ const Register = () => {
         }
         if (newPassword != confNewPassword) {
             alert("Your Passwords Do Not Match!!!")
+        }
+        if (!validator.isEmail(email)) {
+            alert("Please enter a valid email!")
         }
     }
 
@@ -57,12 +61,12 @@ const Register = () => {
             <p>Enter your email address:</p>
             <label for='email'>
                 <p>Email:</p>
-                <input type="email" name="email" onChange={updateEmail}></input>
+                <input type="email" name="email" onChange={updateEmail} maxLength={254}></input>
             </label>
             <p>Please type a username and password: </p>
             <label for='userName'>    
                 <p>Username:</p>
-                <input type='text' name='userName' onChange={updateUserName} required></input>
+                <input type='text' name='userName' onChange={updateUserName} maxLength={150} required></input>
             </label>
             <label for='password'>    
                 <p>Password:</p>
