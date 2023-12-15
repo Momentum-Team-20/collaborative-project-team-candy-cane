@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import validator from 'validator'
+import NavBar from './NavBar'
 
 //TODO:
 // Add post request, and validation to ensure username isn't taken and email not already in use
@@ -11,7 +12,7 @@ const Register = () => {
     const [confNewPassword, setConfNewPassword] = useState('')
     const [email, setEmail] = useState('')
 
-    //Perform Post request to databate to add new user and username and password
+    //Perform Post request to databate to add new user and username and password after validations
     const submitToDB = () => {
         if (newUserName === '') {
             alert("Please input a username!")

@@ -5,11 +5,15 @@ import Login from "./Login";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Register from './Registration'
+import NavBar from "./NavBar";
+
 
 const MainFeed = ({ token }) => {
   const [cardInfo, setCardInfo] = useState([]);
   // const [token, setToken] = useState(null)
   const [username, setUsername] = useState("");
+  // const [loggedIn, setLoggedIn] = useState(false)
+  
 
   console.log(`this is main feed ${token}`);
 
@@ -21,14 +25,27 @@ const MainFeed = ({ token }) => {
         },
       })
       .then((res) => {
+        setLoggedIn(true);
         setCardInfo(res.data.results);
       });
   }, [token]);
   console.log("This is main feed");
   console.log(typeof cardInfo);
 
+  // if (loggedIn === false) {
+  //   return (
+  //     <>
+  //       <div className='logInBar'>
+  //         <a>Log In</a>
+  //         <a>Register</a>
+  //       </div>
+  //     </>
+  //   )
+  // }
+
   return (
     <>
+      <NavBar />
       <Register />
       <h1>Cards</h1>
       {token && (
