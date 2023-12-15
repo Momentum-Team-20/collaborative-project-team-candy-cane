@@ -55,6 +55,7 @@ const MainFeed = ({ token }) => {
             <UserPage
 
             /> */}
+      <UserPage />
     </>
   );
 };
