@@ -4,6 +4,7 @@ import UserPage from "./UserPage";
 import Login from "./Login";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Register from './Registration'
 
 const MainFeed = ({ token }) => {
   const [cardInfo, setCardInfo] = useState([]);
@@ -28,6 +29,7 @@ const MainFeed = ({ token }) => {
 
   return (
     <>
+      <Register />
       <h1>Cards</h1>
       {token && (
         <div>
