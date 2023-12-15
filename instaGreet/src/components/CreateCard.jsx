@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from 'axios'
 
 const CreateCard = () => {
     const [form, setForm] = useState({
@@ -14,7 +15,15 @@ const handleChange = (e) => {
 }
 const handleSubmit = (e) => {
     e.preventDefault();
+    axios.post('https://social-cards.fly.dev/api/cards/',
+    {...form,},
+    {
+        headers: {
+            Authorization: `Token ${token}`
+        }
+    }
 
+    )
 }
 
     return(
@@ -24,7 +33,7 @@ const handleSubmit = (e) => {
                 <label> Front of Card:<input id="front_text" value={form.front_text} onChange={handleChange} /></label>
                 <label> Inside of Card:<input id="back_text" value={form.back_text} onChange={handleChange}/></label>
                 <label> Background color:
-                    <select name="selectedBackgroundColor">
+                    <select id="background_color" name="selectedBackgroundColor">
                         <option value="red">Red</option>
                         <option value="blue">Blue</option>
                         <option value="green">Green</option>
