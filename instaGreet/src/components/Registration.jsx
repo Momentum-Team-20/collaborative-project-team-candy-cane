@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import validator from 'validator'
+import{ useNavigate, useOutletContext } from 'react-router-dom'
 
 //TODO:
 // Add post request, and validation to ensure username isn't taken and email not already in use
@@ -10,6 +11,7 @@ const Register = () => {
     const [newPassword, setNewPassword] = useState('')
     const [confNewPassword, setConfNewPassword] = useState('')
     const [email, setEmail] = useState('')
+    const navigate = useNavigate()
 
     //Perform Post request to databate to add new user and username and password
     const submitToDB = () => {
@@ -28,6 +30,8 @@ const Register = () => {
         if (!validator.isEmail(email)) {
             alert("Please enter a valid email!")
         }
+        // Commented out navigate until POST method is implemented to avoid unwanted re-routing
+        // navigate('/')
     }
 
 
