@@ -11,10 +11,11 @@ const Register = () => {
     const [newPassword, setNewPassword] = useState('')
     const [confNewPassword, setConfNewPassword] = useState('')
     const [email, setEmail] = useState('')
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
 
     //Perform Post request to databate to add new user and username and password
-    const submitToDB = () => {
+    const submitToDB = (event) => {
+        event.preventDefault()
         if (newUserName === '') {
             alert("Please input a username!")
         }
@@ -30,6 +31,12 @@ const Register = () => {
         if (!validator.isEmail(email)) {
             alert("Please enter a valid email!")
         }
+        axios.post('https://social-cards.fly.dev/api/auth/users/',
+        {
+            "username": newUserName,
+            "password": newPassword,
+            "email": email
+        })
         // Commented out navigate until POST method is implemented to avoid unwanted re-routing
         // navigate('/')
     }
