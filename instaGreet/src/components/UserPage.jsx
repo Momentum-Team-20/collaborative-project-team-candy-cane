@@ -9,9 +9,6 @@ const UserPage = () =>{
             <CreateCard
 
             />
-            <div className="card">
-                <Card />
-                User's Card Placeholder</div>
         </>
     )
 }

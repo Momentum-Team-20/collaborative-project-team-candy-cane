@@ -1,11 +1,16 @@
 import { useState } from "react";
 import axios from 'axios'
 import Card from './Card'
+import { useNavigate } from 'react-router-dom'
 
-const CreateCard = () => {
+
+const CreateCard = ({token}) => {
     const [form, setForm] = useState({
-
+        front_text:'',
+        back_text:'',
+        background_color:'',
 })
+const navigate = useNavigate()
 
 // add .lowercase
 const handleChange = (e) => {
@@ -15,6 +20,7 @@ const handleChange = (e) => {
     })
 }
 const handleSubmit = (e) => {
+    console.log(token)
     e.preventDefault();
     axios.post('https://social-cards.fly.dev/api/cards/',
     {...form,},
@@ -23,8 +29,10 @@ const handleSubmit = (e) => {
             Authorization: `Token ${token}`
         }
     }
-
     )
+    // .then(() => {
+    //     navigate('/')
+    // })
 }
 
     return(
@@ -40,13 +48,22 @@ const handleSubmit = (e) => {
                         <option value="green">Green</option>
                     </select>
                 </label>
+                <label>Background Image:<input id="imageURL" value={form.imageURL} onChange={handleChange}/>
+                </label>
+                <label>Font:
+                    <select id="font" onChange={handleChange}>
+                        <option></option>
+                        <option></option>
+                        <option></option>
+                    </select>
+                </label>
                 <button type="submit">Post!</button>
             </form>
             <Card 
             front_text={form.front_text}
+            back_text={form.back_text}
             background_color={form.background_color}/>
-            {/* I think this button should actually go on the user page? - Freddie
-            <button className="newCardButton">Create your new greeting card here!</button> */}
+            
         </>
     )
 }

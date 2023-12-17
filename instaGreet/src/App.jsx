@@ -3,11 +3,14 @@ import "./App.css";
 import MainFeed from "./components/MainFeed";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
+import { Navigate, Route, Routes } from 'react-router-dom'
+import CreateCard from "./components/CreateCard";
 
 function App() {
   const [token, setToken] = useState(null);
   const [username, setUsername] = useState("");
   const [cardInfo, setCardInfo] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const setAuth = (username, token) => {
     setUsername(username);
@@ -32,6 +35,15 @@ function App() {
       <NavBar />
       <Login setAuth={setAuth} />
       <MainFeed token={token} />
+      {/* <Routes>
+        <Route 
+          path="/"
+          element={<MainFeed token={token} loggedIn={loggedIn} />}
+        /> */}
+        {/* <Route path="/login" element={<Login setAuth={setAuth} setLoggedIn={setLoggedIn} />} />
+        <Route path="/register" element={<Register />} /> */}
+      {/* </Routes> */}
+
       {/* <h1>Cards</h1>
       {token ? (
         <ul>
@@ -43,6 +55,7 @@ function App() {
       <Login 
         setAuth={setAuth}/>
         )} */}
+
     </>
   );
 }
