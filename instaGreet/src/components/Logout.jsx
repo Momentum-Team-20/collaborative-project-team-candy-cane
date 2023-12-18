@@ -7,15 +7,15 @@ const Logout = ({ token, setAuth, username }) => {
     console.log({token})
 
 const handleClick = () => {
-    axios.post('https://social-cards.fly.dev/api/auth/token/logout/', {
-       authorization: `Token ${token}`,
-    })
-    .then(() => {
-        setAuth("", null)
-        console.log(`After logout ${token}`)
-        navigate('/')
-    }, [token])
-
+    // axios.post('https://social-cards.fly.dev/api/auth/token/logout/', {
+    //    authorization: `Token ${token}`,
+    // })
+    // .then(() => {
+    //     setAuth("", null)
+    //     console.log(`After logout ${token}`)
+    //     navigate('/')
+    // }, [token])
+    console.log("Logout clicked")
 }
 
     return (
