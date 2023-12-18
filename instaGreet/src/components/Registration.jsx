@@ -31,7 +31,14 @@ const Register = () => {
         if (!validator.isEmail(email)) {
             alert("Please enter a valid email!")
         }
-        // navigate('/')
+        axios.post('https://social-cards.fly.dev/api/auth/users/',
+        {
+            "username": newUserName,
+            "password": newPassword,
+            "email": email
+        })
+        // Commented out navigate until POST method is implemented to avoid unwanted re-routing
+        navigate('/login')
     }
 
 
