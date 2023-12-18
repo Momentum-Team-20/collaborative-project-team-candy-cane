@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import validator from 'validator'
+import NavBar from './NavBar'
 import{ useNavigate, useOutletContext } from 'react-router-dom'
 
 //TODO:
@@ -11,11 +12,10 @@ const Register = () => {
     const [newPassword, setNewPassword] = useState('')
     const [confNewPassword, setConfNewPassword] = useState('')
     const [email, setEmail] = useState('')
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
-    //Perform Post request to databate to add new user and username and password
-    const submitToDB = (event) => {
-        event.preventDefault()
+    //Perform Post request to databate to add new user and username and password after validations
+    const submitToDB = () => {
         if (newUserName === '') {
             alert("Please input a username!")
         }
@@ -38,7 +38,7 @@ const Register = () => {
             "email": email
         })
         // Commented out navigate until POST method is implemented to avoid unwanted re-routing
-        // navigate('/')
+        navigate('/')
     }
 
 
@@ -89,6 +89,7 @@ const Register = () => {
             </label>
             <br></br>
             <button onClick={submitToDB}>Submit</button>
+            <p>Already have an account?  Log in here: <a href="/login">Login</a></p>
         </>
     )
 

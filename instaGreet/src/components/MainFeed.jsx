@@ -5,21 +5,21 @@ import Login from "./Login";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Register from './Registration'
+import NavBar from "./NavBar";
 
-const MainFeed = ({ token }) => {
+
+const MainFeed = ({ token, loggedIn }) => {
   const [cardInfo, setCardInfo] = useState([]);
   // const [token, setToken] = useState(null)
   const [username, setUsername] = useState("");
+
+  
 
   console.log(`this is main feed ${token}`);
 
   useEffect(() => {
     axios
-      .get("https://social-cards.fly.dev/api/cards/", {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      })
+      .get("https://social-cards.fly.dev/api/cards/")
       .then((res) => {
         setCardInfo(res.data.results);
       });
@@ -29,9 +29,14 @@ const MainFeed = ({ token }) => {
 
   return (
     <>
-      <Register />
+      {!loggedIn ?  
+        <div className='logInBar'>
+          <a href="/login">Log In</a>
+          <a href="/register">Register</a>
+        </div>:
+      <NavBar />}
       <h1>Cards</h1>
-      {token && (
+     
         <div>
           {/* // <p>{cardInfo}</p> */}
           {cardInfo.map((card) => {
@@ -44,7 +49,6 @@ const MainFeed = ({ token }) => {
             );
           })}
         </div>
-      )}
       {/* <p>This is MainFeed</p>
             <div className="cardFrame">
                 <div className="card">
