@@ -41,13 +41,15 @@ const handleSubmit = (e) => {
             <form method="post" onSubmit={handleSubmit}>
                 <label> Front of Card:<input id="front_text" value={form.front_text} onChange={handleChange} /></label>
                 <label> Inside of Card:<input id="back_text" value={form.back_text} onChange={handleChange}/></label>
-                <label> Background color:
+                <label htmlFor="background_color">Color Picker:</label>
+                <input type="color" id="background_color" value={"#ffffff"} onChange={handleChange}/>
+                {/* <label> Background color:
                     <select id="background_color" name="selectedBackgroundColor" onChange={handleChange}>
                         <option value="red">Red</option>
                         <option value="blue">Blue</option>
                         <option value="green">Green</option>
                     </select>
-                </label>
+                </label> */}
                 <label>Background Image:<input id="imageURL" value={form.imageURL} onChange={handleChange}/>
                 </label>
                 <label>Font:

@@ -16,7 +16,7 @@ const Card = ({ key, front_text, background_color }) => {
 
   return (
     <>
-      <div className={`${background_color} outerCardDiv`} >
+      <div style={{ backgroundColor: `${background_color}` }} className={`${background_color} outerCardDiv`} >
         <p className="frontCardText">{front_text}</p>
       </div>
     </>
