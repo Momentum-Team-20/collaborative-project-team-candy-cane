@@ -4,6 +4,7 @@ import MainFeed from "./components/MainFeed";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import { Navigate, Route, Routes } from 'react-router-dom'
+import CreateCard from "./components/CreateCard";
 import Register from "./components/Registration";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
       <Login 
         setAuth={setAuth}/>
         )} */}
+
     </>
   );
 }
