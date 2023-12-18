@@ -5,6 +5,8 @@ import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Register from "./components/Registration";
+import CreateCard from "./components/CreateCard";
+import UserPage from "./components/UserPage";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -41,6 +43,8 @@ function App() {
         />
         <Route path="/login" element={<Login setAuth={setAuth} setLoggedIn={setLoggedIn} />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/create-card" element={token ? <Navigate to="/login" /> : <CreateCard token={token} />} />
+        <Route path="/user-page" element={token ? <Navigate  to="/login" /> : <UserPage token={token} /> } />
       </Routes>
       {/* <h1>Cards</h1>
       {token ? (

@@ -2,6 +2,7 @@ import CreateCard from "./CreateCard";
 import Card from "./Card";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import NavBar from "./NavBar";
 
 //we need to pass username and token in through props
 
@@ -21,6 +22,8 @@ const UserPage = (props) => {
   }, [props.token]);
 
   return (
+    <>
+    <NavBar />
     <div className="userPageContainer">
       <h1 className="userPageTitle">{props.username}'s InstaGreet Page</h1>
       {/* link to followers below */}
@@ -46,6 +49,7 @@ const UserPage = (props) => {
           </div>
       </div>
     </div>
+    </>
   );
 };
 
