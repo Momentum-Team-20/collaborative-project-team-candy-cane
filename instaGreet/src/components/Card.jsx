@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Card = ({ key, front_text, background_color }) => {
+const Card = ({ key, front_text, background_color, creator }) => {
   // useEffect((e) => {
   //     e.preventDefault()
   //     axios.get("https://social-cards.fly.dev/api/cards").then((res) => {
@@ -16,8 +16,11 @@ const Card = ({ key, front_text, background_color }) => {
 
   return (
     <>
+      <div className="cardFrame">
       <div style={{ backgroundColor: `${background_color}` }} className={`${background_color} outerCardDiv`} >
         <p className="frontCardText">{front_text}</p>
+      </div>
+      <p>{creator}</p>
       </div>
     </>
   );

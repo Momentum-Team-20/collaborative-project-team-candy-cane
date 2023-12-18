@@ -46,6 +46,7 @@ const MainFeed = ({ token, loggedIn }) => {
                 key={card.id}
                 front_text={card.front_text}
                 background_color={card.background_color}
+                creator={card.creator}
               />
             );
           })}
