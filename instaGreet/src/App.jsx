@@ -7,10 +7,12 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import Register from "./components/Registration";
 import CreateCard from "./components/CreateCard";
 import UserPage from "./components/UserPage";
+import useLocalStorageState from 'use-local-storage-state'
+
 
 function App() {
-  const [token, setToken] = useState(null);
-  const [username, setUsername] = useState("");
+  const [token, setToken] = useLocalStorageState(null);
+  const [username, setUsername] = useLocalStorageState("");
   const [cardInfo, setCardInfo] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   

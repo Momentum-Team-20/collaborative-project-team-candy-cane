@@ -8,6 +8,7 @@ import Register from './Registration'
 import NavBar from "./NavBar";
 
 
+
 const MainFeed = ({ token, loggedIn }) => {
   const [cardInfo, setCardInfo] = useState([]);
   // const [token, setToken] = useState(null)
