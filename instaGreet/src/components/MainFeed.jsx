@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Register from './Registration'
 import NavBar from "./NavBar";
+import CreateCard from "./CreateCard";
 
 
 const MainFeed = ({ token, loggedIn }) => {
@@ -61,7 +62,9 @@ const MainFeed = ({ token, loggedIn }) => {
             <UserPage
 
             /> */}
-      <UserPage />
+      {/* <UserPage /> */}
+      <CreateCard
+      token={token} />
     </>
   );
 };
