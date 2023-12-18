@@ -33,7 +33,7 @@ function App() {
         <Route path="/login" element={<Login setAuth={setAuth} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/create-card" element={!token ? <Navigate to="/login" /> : <CreateCard token={token} />} />
-        <Route path="/user-page" element={!token ? <Navigate  to="/login" /> : <UserPage token={token} /> } />
+        <Route path="/user-page" element={!token ? <Navigate  to="/login" /> : <UserPage token={token} username={username} /> } />
         <Route path="/logout" element={!token ? <Navigate to="/" /> : <Logout token={token} setAuth={setAuth} username={username} />} />
       </Routes>
     </>

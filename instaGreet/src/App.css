@@ -44,8 +44,9 @@
   text-align: center;
 }
 
-.userPagecreateCardButton {
+.userPagecreateCardLink {
   text-align: center;
+  line-height: 300px;
   font-weight: bold;
   font-size: x-large;
   border: 1px solid black;
