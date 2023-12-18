@@ -19,28 +19,13 @@ const MainFeed = ({ token, loggedIn }) => {
 
   useEffect(() => {
     axios
-      .get("https://social-cards.fly.dev/api/cards/", {
-        headers: {
-          Authorization: `Token ${token}`,
-        },
-      })
+      .get("https://social-cards.fly.dev/api/cards/")
       .then((res) => {
         setCardInfo(res.data.results);
       });
   }, [token]);
   console.log("This is main feed");
   console.log(typeof cardInfo);
-
-  // if (loggedIn === false) {
-  //   return (
-  //     <>
-  //       <div className='logInBar'>
-  //         <a>Log In</a>
-  //         <a>Register</a>
-  //       </div>
-  //     </>
-  //   )
-  // }
 
   return (
     <>
@@ -51,7 +36,7 @@ const MainFeed = ({ token, loggedIn }) => {
         </div>:
       <NavBar />}
       <h1>Cards</h1>
-      {token && (
+     
         <div>
           {/* // <p>{cardInfo}</p> */}
           {cardInfo.map((card) => {
@@ -64,7 +49,6 @@ const MainFeed = ({ token, loggedIn }) => {
             );
           })}
         </div>
-      )}
       {/* <p>This is MainFeed</p>
             <div className="cardFrame">
                 <div className="card">
