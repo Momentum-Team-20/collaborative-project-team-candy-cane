@@ -38,7 +38,7 @@ const Register = () => {
             "email": email
         })
         // Commented out navigate until POST method is implemented to avoid unwanted re-routing
-        navigate('/')
+        navigate('/login')
     }
 
 
