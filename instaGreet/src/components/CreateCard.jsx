@@ -31,9 +31,9 @@ const handleSubmit = (e) => {
         }
     }
     )
-    // .then(() => {
-    //     navigate('/')
-    // })
+    .then(() => {
+        navigate('/')
+    })
 }
 
     return(
