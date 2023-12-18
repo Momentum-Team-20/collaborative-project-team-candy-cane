@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from 'axios'
 import Card from './Card'
+import NavBar from "./NavBar";
 import { useNavigate } from 'react-router-dom'
 
 
@@ -37,6 +38,7 @@ const handleSubmit = (e) => {
 
     return(
         <>
+        <NavBar />
             <p>This is the Create Card Page</p>
             <form method="post" onSubmit={handleSubmit}>
                 <label> Front of Card:<input id="front_text" value={form.front_text} onChange={handleChange} /></label>

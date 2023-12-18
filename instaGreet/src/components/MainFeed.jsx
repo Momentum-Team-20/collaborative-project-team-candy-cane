@@ -9,7 +9,8 @@ import NavBar from "./NavBar";
 import CreateCard from "./CreateCard";
 
 
-const MainFeed = ({ token, loggedIn }) => {
+
+const MainFeed = ({ token }) => {
   const [cardInfo, setCardInfo] = useState([]);
   // const [token, setToken] = useState(null)
   const [username, setUsername] = useState("");
@@ -30,7 +31,7 @@ const MainFeed = ({ token, loggedIn }) => {
 
   return (
     <>
-      {!loggedIn ?  
+      {!token ?  
         <div className='logInBar'>
           <a href="/login">Log In</a>
           <a href="/register">Register</a>
