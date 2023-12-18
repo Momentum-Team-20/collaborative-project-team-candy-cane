@@ -4,6 +4,7 @@ import MainFeed from "./components/MainFeed";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import { Navigate, Route, Routes } from 'react-router-dom'
+import CreateCard from "./components/CreateCard";
 import Register from "./components/Registration";
 import CreateCard from "./components/CreateCard";
 import UserPage from "./components/UserPage";
