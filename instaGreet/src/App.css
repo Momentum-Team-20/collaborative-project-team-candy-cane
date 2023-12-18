@@ -25,6 +25,18 @@
   border: 1px solid black;
 }
 
+.Rubik {
+  font-family: 'Rubik Scribble', sans-serif;
+}
+
+.Playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.Quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
 .red {
   background-color: red;
 }

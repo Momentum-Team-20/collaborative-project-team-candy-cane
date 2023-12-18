@@ -45,20 +45,14 @@ const handleSubmit = (e) => {
                 <label> Inside of Card:<input id="back_text" value={form.back_text} onChange={handleChange}/></label>
                 <label htmlFor="background_color">Color Picker:</label>
                 <input type="color" id="background_color" value={"#ffffff"} onChange={handleChange}/>
-                {/* <label> Background color:
-                    <select id="background_color" name="selectedBackgroundColor" onChange={handleChange}>
-                        <option value="red">Red</option>
-                        <option value="blue">Blue</option>
-                        <option value="green">Green</option>
-                    </select>
+                {/* <label>Background Image:<input id="imageURL" value={form.imageURL} onChange={handleChange}/>
                 </label> */}
-                <label>Background Image:<input id="imageURL" value={form.imageURL} onChange={handleChange}/>
-                </label>
                 <label>Font:
                     <select id="font" onChange={handleChange}>
-                        <option></option>
-                        <option></option>
-                        <option></option>
+                        <option>------</option>
+                        <option>Rubik</option>
+                        <option>Playfair</option>
+                        <option>Quicksand</option>
                     </select>
                 </label>
                 <button type="submit">Post!</button>
@@ -66,7 +60,8 @@ const handleSubmit = (e) => {
             <Card 
             front_text={form.front_text}
             back_text={form.back_text}
-            background_color={form.background_color}/>
+            background_color={form.background_color}
+            font={form.font}/>
             
         </>
     )
