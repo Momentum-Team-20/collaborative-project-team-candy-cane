@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate, useOutletContext } from 'react-router-dom'
 
 
-const Login = ({ setAuth, setLoggedIn }) => {
+const Login = ({ setAuth }) => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
@@ -20,7 +20,6 @@ const Login = ({ setAuth, setLoggedIn }) => {
             password: password,
           })
           .then((res) => {
-            setLoggedIn(true)
             setAuth(username, res.data.auth_token)
             navigate('/')
           })
