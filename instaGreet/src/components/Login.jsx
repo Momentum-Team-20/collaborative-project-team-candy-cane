@@ -52,6 +52,7 @@ const Login = ({ setAuth }) => {
         </div>
       </form>
       <p>New User?  Create an account here: <a href="/register">Registration</a></p>
+      <a href="/">Home</a>
     </>
     )
 }

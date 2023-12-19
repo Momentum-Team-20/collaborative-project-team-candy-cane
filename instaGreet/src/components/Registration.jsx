@@ -19,19 +19,15 @@ const Register = () => {
     const submitToDB = () => {
         if (newUserName === '') {
             alert("Please input a username!")
-        }
-        if (newPassword === '') {
+        } else if (newPassword === '') {
             alert("Please input a password!")
-        }
-        if (confNewPassword === '') {
+        } else if (confNewPassword === '') {
             alert("Please confirm your password!")
-        }
-        if (newPassword != confNewPassword) {
+        } else if (newPassword != confNewPassword) {
             alert("Your Passwords Do Not Match!!!")
-        }
-        if (!validator.isEmail(email)) {
+        } else if (!validator.isEmail(email)) {
             alert("Please enter a valid email!")
-        }
+        } else(
         axios.post('https://social-cards.fly.dev/api/auth/users/',
         {
             "username": newUserName,
@@ -42,7 +38,7 @@ const Register = () => {
         ).catch((err) => {
             console.log("The error ", {err})
             setError(err.response.data.username[0]
-                )})
+                )}))
     }
 
 
@@ -95,6 +91,7 @@ const Register = () => {
             <br></br>
             <button onClick={submitToDB}>Submit</button>
             <p>Already have an account?  Log in here: <a href="/login">Login</a></p>
+            <a href="/">Home</a>
         </>
     )
 
