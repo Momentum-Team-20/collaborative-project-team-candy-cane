@@ -9,6 +9,8 @@ import UserPage from "./components/UserPage";
 import useLocalStorageState from 'use-local-storage-state'
 import Logout from "./components/Logout";
 import CardDetails from "./components/CardDetails";
+import DeleteCard from "./components/DeleteCard";
+import FollowingFeed from "./components/FollowingFeed";
 
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
         <Route path="/user-page" element={!token ? <Navigate  to="/login" /> : <UserPage token={token} username={username} /> } />
         <Route path="/logout" element={!token ? <Navigate to="/" /> : <Logout token={token} setAuth={setAuth} username={username} />} />
         <Route path="/card-details/:id" element={!token ? <Navigate to="/login" /> : <CardDetails token={token} />} />
+        <Route path="/delete-card/:id" element={!token ? <Navigate to="/login" /> : <DeleteCard token={token} />} />
+        <Route path="/following-feed" element={!token ? <Navigate to="/login" /> : <FollowingFeed />} />
       </Routes>
     </>
   );

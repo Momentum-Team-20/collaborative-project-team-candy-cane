@@ -40,15 +40,14 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
   return (
     <>
       <div className="cardFrame">
-        <div
-          style={{ backgroundColor: `${background_color}` }}
-          className={`${background_color} outerCardDiv`}
-        >
-          <p className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</p>
-        </div>
-        <button onClick={handleFollowUserClick}>Follow {creator}</button>
-        {/* add a link to following */}
-      </div>
+          <div
+            style={{ backgroundColor: `${background_color}` }}
+            className={`${background_color} outerCardDiv`}
+          >
+            <p className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</p>
+          </div>
+          <button onClick={handleFollowUserClick}>Follow {creator}</button>
+          {/* add a link to following */}
     </>
   );
 };
