@@ -41,8 +41,8 @@ const handleSubmit = (e) => {
         <NavBar />
             <p>This is the Create Card Page</p>
             <form method="post" onSubmit={handleSubmit}>
-                <label> Front of Card:<input id="front_text" value={form.front_text} onChange={handleChange} /></label>
-                <label> Inside of Card:<input id="back_text" value={form.back_text} onChange={handleChange}/></label>
+                <label> Greeting:<input id="front_text" value={form.front_text} onChange={handleChange} /></label>
+                
                 <label htmlFor="background_color">Color Picker:</label>
                 <input type="color" id="background_color" value={"#ffffff"} onChange={handleChange}/>
                 {/* <label>Background Image:<input id="imageURL" value={form.imageURL} onChange={handleChange}/>
@@ -55,13 +55,36 @@ const handleSubmit = (e) => {
                         <option>Quicksand</option>
                     </select>
                 </label>
+                <label>Font Size:
+                    <select id="font_size" onChange={handleChange}>
+                        <option>-----</option>
+                        <option>small</option>
+                        <option>medium</option>
+                        <option>large</option>
+                        <option>larger</option>
+                        <option>largest</option>
+                    </select>
+                </label>
+                <label>Align text:
+                    <select id="text_align" onChange={handleChange}>
+                    <option>-----</option>
+                    <option>center</option>
+                    <option>left</option>
+                    <option>right</option>
+                    <option>top</option>
+                    <option>bottom</option>
+                    </select>
+                </label>
                 <button type="submit">Post!</button>
             </form>
             <Card 
             front_text={form.front_text}
             back_text={form.back_text}
             background_color={form.background_color}
-            font={form.font}/>
+            font={form.font}
+            font_size={form.font_size}
+            text_align={form.text_align}
+            />
             
         </>
     )
