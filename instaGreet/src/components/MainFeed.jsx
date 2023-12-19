@@ -35,11 +35,11 @@ const MainFeed = ({ token, setCardID }) => {
 
   return (
     <>
-      {!token ? (
+      {!token ? 
         <div className="logInBar">
           <a href="/login">Log In</a>
           <a href="/register">Register</a>
-        </div>:
+        </div> :
       <NavBar />}
       <h1>Cards</h1>
      

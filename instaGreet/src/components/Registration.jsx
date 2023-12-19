@@ -41,9 +41,8 @@ const Register = () => {
         navigate('/login')}
         ).catch((err) => {
             console.log("The error ", {err})
-            setError(err.response.data.non_field_errors[0]
+            setError(err.response.data.username[0]
                 )})
-            console.log("The error string ", error)
     }
 
 
