@@ -24,6 +24,12 @@ const CardDetails = ({ token, setCardID, username }) => {
         navigate(`/delete-card/${key}`)
     }
 
+    const goToUpdate = (event, card) => {
+        const key = card.id
+        setCardID(key)
+        navigate(`/update-card/${key}`)
+    }
+
     if (card.creator != username) {
         return (
             <>
@@ -48,6 +54,7 @@ const CardDetails = ({ token, setCardID, username }) => {
                 background_color={card.background_color}
                 creator={card.creator}
             />
+            <button onClick={((e) => goToUpdate(e, card))}>Update</button>
             <button onClick={((e) => goToDelete(e, card))}>Delete</button>
         </>
     )

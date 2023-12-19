@@ -11,6 +11,7 @@ import Logout from "./components/Logout";
 import CardDetails from "./components/CardDetails";
 import DeleteCard from "./components/DeleteCard";
 import FollowingFeed from "./components/FollowingFeed";
+import UpdateCard from "./components/UpdateCard";
 
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
         <Route path="/card-details/:id" element={!token ? <Navigate to="/login" /> : <CardDetails token={token} setCardID={setCardID} username={username} />} />
         <Route path="/delete-card/:id" element={!token ? <Navigate to="/login" /> : <DeleteCard token={token} />} />
         <Route path="/following-feed" element={!token ? <Navigate to="/login" /> : <FollowingFeed />} />
+        <Route path="/update-card/:id" element={!token ? <Navigate to="/login" /> : <UpdateCard token={token} setCardID={setCardID} username={username} />} />
+
       </Routes>
     </>
   );
