@@ -15,7 +15,7 @@ function App() {
   const [token, setToken] = useLocalStorageState(null);
   const [username, setUsername] = useLocalStorageState("");
   const [cardInfo, setCardInfo] = useState([]);
-  const [cardID, setCardID] = useState(null)
+  const [cardID, setCardID] = useState(null);
   
 
   const setAuth = (username, token) => {

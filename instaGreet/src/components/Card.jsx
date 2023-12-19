@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Card = ({ key, front_text, background_color, creator, token, creatorID }) => { 
+const Card = ({ key, front_text, background_color, creator, token, creatorID, font, font_size, text_align }) => { 
 
   // useEffect((e) => {
   //     e.preventDefault()
@@ -14,6 +14,7 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID }) 
   console.log("this is key", key);
   console.log("this is front_text", front_text);
   console.log("this is background_color", background_color);
+  console.log('the font is:', font)
 
 
   const handleFollowUserClick = () => {
@@ -43,7 +44,7 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID }) 
           style={{ backgroundColor: `${background_color}` }}
           className={`${background_color} outerCardDiv`}
         >
-          <p className="frontCardText">{front_text}</p>
+          <p className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</p>
         </div>
         <button onClick={handleFollowUserClick}>Follow {creator}</button>
         {/* add a link to following */}

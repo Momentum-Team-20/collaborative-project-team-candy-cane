@@ -25,6 +25,9 @@
   border: 1px solid black;
 }
 
+/* .frontCardText {
+  display: flex;
+} */
 .Rubik {
   font-family: 'Rubik Scribble', sans-serif;
 }
@@ -37,7 +40,38 @@
   font-family: 'Quicksand', sans-serif;
 }
 
-.red {
+.small {
+  font-size: small;
+}
+
+.medium {
+  font-size: 20px;
+}
+
+.large {
+  font-size: 40px;
+}
+
+.larger {
+  font-size: 60px;
+}
+.largest {
+  font-size: 80px;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: start;
+}
+
+.right {
+  text-align: end;
+}
+
+/* .red {
   background-color: red;
 }
 
@@ -47,7 +81,7 @@
 
 .blue {
   background-color: blue;
-}
+} */
 
 /* User Page CSS */
 
