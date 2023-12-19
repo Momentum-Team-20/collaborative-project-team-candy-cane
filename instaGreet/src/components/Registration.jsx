@@ -12,6 +12,7 @@ const Register = () => {
     const [newPassword, setNewPassword] = useState('')
     const [confNewPassword, setConfNewPassword] = useState('')
     const [email, setEmail] = useState('')
+    const [error, setError] = useState(null)
     const navigate = useNavigate()
 
     //Perform Post request to databate to add new user and username and password after validations
@@ -36,9 +37,13 @@ const Register = () => {
             "username": newUserName,
             "password": newPassword,
             "email": email
-        })
-        // Commented out navigate until POST method is implemented to avoid unwanted re-routing
-        navigate('/login')
+        }).then((res) => {
+        navigate('/login')}
+        ).catch((err) => {
+            console.log("The error ", {err})
+            setError(err.response.data.non_field_errors[0]
+                )})
+            console.log("The error string ", error)
     }
 
 
@@ -69,6 +74,7 @@ const Register = () => {
     return (
         <>
             <h1>New User Registration</h1>
+            {error && <p style={{ color: 'red' }}> {error} </p>}
             <p>Enter your email address:</p>
             <label for='email'>
                 <p>Email:</p>
