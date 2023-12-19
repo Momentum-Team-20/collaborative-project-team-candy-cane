@@ -42,6 +42,7 @@ const DeleteCard = ({ token }) => {
                     creator={card.creator}
                 />
             <button type="submit" onClick={confirmDelete}>Delete</button>
+            <a href={`/card-details/${id}`}>Cancel</a>
         </>
     )
 }
