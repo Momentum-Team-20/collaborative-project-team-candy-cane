@@ -42,7 +42,6 @@ const MainFeed = ({ token, setCardID }) => {
         </div> :
       <NavBar />}
       <h1>Cards</h1>
-     
         <div>
           {/* // <p>{cardInfo}</p> */}
           {cardInfo.map((card) => {
@@ -53,45 +52,13 @@ const MainFeed = ({ token, setCardID }) => {
                 front_text={card.front_text}
                 background_color={card.background_color}
                 creator={card.creator}
+                creatorID={card.creator_id}
+                token={token}
               />
               </div>
             );
           })}
         </div>
-      ) : (
-        <NavBar />
-      )}
-      <h1>Cards</h1>
-
-      <div>
-        {/* // <p>{cardInfo}</p> */}
-        {cardInfo.map((card) => {
-          return (
-            <Card
-              key={card.id}
-              front_text={card.front_text}
-              background_color={card.background_color}
-              creator={card.creator}
-              creatorID={card.creator_id}
-              token={token}
-            />
-          );
-        })}
-      </div>
-      {/* <p>This is MainFeed</p>
-            <div className="cardFrame">
-                <div className="card">
-                    <Card />
-                Card and Frame Placeholder</div>
-            </div>
-            <FollowingFeed
-
-            />
-            <UserPage
-
-            /> */}
-      {/* <UserPage /> */}
-      <CreateCard token={token} />
     </>
   );
 };
