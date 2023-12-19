@@ -33,6 +33,12 @@ const MainFeed = ({ token, setCardID }) => {
     navigate(`/card-details/${key}`)
   }
 
+  const goToDelete = (event, card) => {
+    const key = card.id
+    setCardID(key)
+    navigate(`/delete-card/${key}`)
+  }
+
   return (
     <>
       {!token ? 
@@ -57,6 +63,7 @@ const MainFeed = ({ token, setCardID }) => {
                 token={token}
               />
               </div>
+              <button onClick={((e) => goToDelete(e, card))}>Delete</button>
               </>
             );
           })}
