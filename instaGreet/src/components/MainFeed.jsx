@@ -46,6 +46,7 @@ const MainFeed = ({ token, setCardID }) => {
           {/* // <p>{cardInfo}</p> */}
           {cardInfo.map((card) => {
             return (
+              <>
               <div onClick={((e) => goToDetails(e, card))} value={card.id}>
               <Card
                 key={card.id}
@@ -56,6 +57,7 @@ const MainFeed = ({ token, setCardID }) => {
                 token={token}
               />
               </div>
+              </>
             );
           })}
         </div>

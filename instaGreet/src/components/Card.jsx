@@ -11,9 +11,9 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID }) 
   //     } )
   // })
 
-  // console.log("this is key", key);
-  // console.log("this is front_text", front_text);
-  // console.log("this is background_color", background_color);
+  console.log("this is key", key);
+  console.log("this is front_text", front_text);
+  console.log("this is background_color", background_color);
 
 
   const handleFollowUserClick = () => {
@@ -52,4 +52,6 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID }) 
   );
 };
 
+
+// style={{ font: `${font}`}}
 export default Card;
