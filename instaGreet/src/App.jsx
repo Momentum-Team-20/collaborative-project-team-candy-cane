@@ -38,7 +38,7 @@ function App() {
         <Route path="/create-card" element={!token ? <Navigate to="/login" /> : <CreateCard token={token} />} />
         <Route path="/user-page" element={!token ? <Navigate  to="/login" /> : <UserPage token={token} username={username} /> } />
         <Route path="/logout" element={!token ? <Navigate to="/" /> : <Logout token={token} setAuth={setAuth} username={username} />} />
-        <Route path="/card-details/:id" element={!token ? <Navigate to="/login" /> : <CardDetails token={token} cardID={cardID} setCardID={setCardID} />} />
+        <Route path="/card-details/:id" element={!token ? <Navigate to="/login" /> : <CardDetails token={token} setCardID={setCardID} username={username} />} />
         <Route path="/delete-card/:id" element={!token ? <Navigate to="/login" /> : <DeleteCard token={token} />} />
         <Route path="/following-feed" element={!token ? <Navigate to="/login" /> : <FollowingFeed />} />
       </Routes>

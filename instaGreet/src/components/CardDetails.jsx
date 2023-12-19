@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react"
 import NavBar from "./NavBar"
 
-const CardDetails = ({ token, cardID, setCardID }) => {
+const CardDetails = ({ token, setCardID, username }) => {
     const [card, setCard] = useState([])
     const { id } = useParams()
     const navigate = useNavigate()
@@ -22,6 +22,21 @@ const CardDetails = ({ token, cardID, setCardID }) => {
         const key = card.id
         setCardID(key)
         navigate(`/delete-card/${key}`)
+    }
+
+    if (card.creator != username) {
+        return (
+            <>
+            <NavBar />
+                <Card 
+                    key={card.id}
+                    front_text={card.front_text}
+                    background_color={card.background_color}
+                    creator={card.creator}
+                />
+            </>
+        )
+
     }
 
     return (
