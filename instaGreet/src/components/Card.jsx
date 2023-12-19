@@ -16,6 +16,7 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
   console.log("this is background_color", background_color);
   console.log('the font is:', font)
 
+  //we need to know who a logged in user follows in order to display a follow or unfollow button -- that might be our status
 
   const handleFollowUserClick = () => {
     axios
@@ -37,6 +38,7 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
       }, []);
   };
 
+
   return (
     <>
       <div className="cardFrame">
@@ -51,5 +53,4 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
     </>
   );
 };
-
 export default Card;
