@@ -51,13 +51,16 @@
 
 /* User Page CSS */
 
+
+
 .userPageTitle, .userPageFollowingText {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
 }
 
-.userPagecreateCardButton {
+.userPagecreateCardLink {
   text-align: center;
+  line-height: 300px;
   font-weight: bold;
   font-size: x-large;
   border: 1px solid black;
@@ -77,6 +80,11 @@
   font-weight: bold;
   text-align: center;
 }
+
+/* .followingButton {
+  
+
+} */
 
 .logInBar {
   display: flex;
