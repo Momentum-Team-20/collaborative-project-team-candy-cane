@@ -37,7 +37,25 @@
   font-family: 'Quicksand', sans-serif;
 }
 
-.red {
+.small {
+  font-size: small;
+}
+
+.medium {
+  font-size: 20px;
+}
+
+.large {
+  font-size: 40px;
+}
+
+.larger {
+  font-size: 60px;
+}
+.largest {
+  font-size: 80px;
+}
+/* .red {
   background-color: red;
 }
 
@@ -47,7 +65,7 @@
 
 .blue {
   background-color: blue;
-}
+} */
 
 /* User Page CSS */
 

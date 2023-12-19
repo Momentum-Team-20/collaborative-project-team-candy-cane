@@ -55,6 +55,8 @@ const MainFeed = ({ token, setCardID }) => {
                 creator={card.creator}
                 creatorID={card.creator_id}
                 token={token}
+                font={card.font}
+                font_size={card.font_size}
               />
               </div>
               </>
