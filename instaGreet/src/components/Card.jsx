@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Card as ReactCard from 'react-bootstrap/Card';
+import ReactCard from 'react-bootstrap/Card';
 
 const Card = ({ key, front_text, background_color, creator, token, creatorID, font, font_size, text_align }) => { 
 
@@ -33,15 +33,15 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
 
   return (
     <>
-      <Card className="cardFrame">
+      <div className="cardFrame">
           <ReactCard
             style={{ backgroundColor: `${background_color}` }}
             className={`${background_color} outerCardDiv`}
           >
-            <p className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</p>
+            <ReactCard.Text className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</ReactCard.Text>
           </ReactCard>
           <button onClick={handleFollowUserClick}>Follow {creator}</button>
-      </Card>
+      </div>
     </>
   );
 };

@@ -22,7 +22,7 @@ const MainFeed = ({ token, setCardID }) => {
     axios.get("https://social-cards.fly.dev/api/cards/").then((res) => {
       setCardInfo(res.data.results);
     });
-  }, [token]);
+  }, []);
   console.log("This is main feed");
   console.log(typeof cardInfo);
 
