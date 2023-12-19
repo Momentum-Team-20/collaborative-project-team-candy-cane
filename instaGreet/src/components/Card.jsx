@@ -1,15 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Card as ReactCard from 'react-bootstrap/Card';
 
 const Card = ({ key, front_text, background_color, creator, token, creatorID, font, font_size, text_align }) => { 
 
-  // useEffect((e) => {
-  //     e.preventDefault()
-  //     axios.get("https://social-cards.fly.dev/api/cards").then((res) => {
-  //         setCardInfo(res.data)
-  //         console.log(res.data)
-  //     } )
-  // })
 
   console.log("this is key", key);
   console.log("this is front_text", front_text);
@@ -39,19 +33,17 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
 
   return (
     <>
-      <div className="cardFrame">
-          <div
+      <Card className="cardFrame">
+          <ReactCard
             style={{ backgroundColor: `${background_color}` }}
             className={`${background_color} outerCardDiv`}
           >
             <p className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</p>
-          </div>
+          </ReactCard>
           <button onClick={handleFollowUserClick}>Follow {creator}</button>
-          {/* add a link to following */}
+      </Card>
     </>
   );
 };
 
-
-// style={{ font: `${font}`}}
 export default Card;
