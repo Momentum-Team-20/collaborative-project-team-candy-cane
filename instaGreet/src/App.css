@@ -17,6 +17,11 @@
   text-align: center;
 }
 
+.logInBar {
+  display: flex;
+  justify-content: space-between;
+}
+
 .outerCardDiv
 {
   height: 300px;
