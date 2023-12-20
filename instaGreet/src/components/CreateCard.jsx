@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Container from "react-bootstrap/Container";
 
 
 const CreateCard = ({token}) => {
@@ -45,6 +46,7 @@ const handleSubmit = (e) => {
     return(
         <>
         <NavBar />
+        <Container>
         <Card 
         front_text={form.front_text}
         back_text={form.back_text}
@@ -114,7 +116,7 @@ const handleSubmit = (e) => {
                 <Button type="submit" onClick={handleSubmit}>Post!</Button>
             </Form.Group>
         </Form>
-            
+        </Container>
         </>
     )
 }
