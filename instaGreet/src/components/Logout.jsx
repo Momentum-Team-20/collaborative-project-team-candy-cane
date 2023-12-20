@@ -1,6 +1,7 @@
 import { useNavigate, useOutletContext } from 'react-router-dom'
 import axios from 'axios'
 import Button from 'react-bootstrap/Button';
+import Container from "react-bootstrap/Container";
 
 const Logout = ({ token, setAuth, username }) => {
     const navigate = useNavigate()
@@ -22,14 +23,14 @@ const handleClick = () => {
 }
 
     return (
-        <>
+        <Container>
             <h1>Are you ready to log out?</h1>
             <br></br>
             <Button type="submit" onClick={handleClick}>Logout</Button>
             <br></br>
             <br></br>
             <a href="/">Cancel</a>
-        </>
+        </Container>
     )
 } 
 

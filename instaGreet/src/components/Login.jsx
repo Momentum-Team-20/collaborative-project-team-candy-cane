@@ -4,7 +4,7 @@ import { useNavigate, useOutletContext } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col'
-// import Form from 'react-bootstrap/Form'
+import Container from 'react-bootstrap/Container';
 
 
 const Login = ({ setAuth }) => {
@@ -32,10 +32,10 @@ const Login = ({ setAuth }) => {
     
     
     return(
-        <>
+      <>
       <h1 className="instagreetTitle">Login</h1>
       {error && <p style={{ color: 'red' }}> {error} </p>}
-      {/* <Form> */}
+      <Container>
       <Form onSubmit={handleSubmit}>
       <Col xs={5}>
         <div className="form-controls">
@@ -61,9 +61,10 @@ const Login = ({ setAuth }) => {
         </div>
       </Form>
       <br></br>
-      {/* </Form> */}
+      
       <p>New User?  Create an account here: <a href="/register">Registration</a></p>
       <a href="/">Home</a>
+      </Container>
     </>
     )
 }

@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Container from 'react-bootstrap/Container'
 
 //TODO:
 // Add post request, and validation to ensure username isn't taken and email not already in use
@@ -74,6 +75,7 @@ const Register = () => {
         <Form>
             <h1 className="instagreetTitle">New User Registration</h1>
             {error && <p style={{ color: 'red' }}> {error} </p>}
+            <Container>
             <Col xs={5}>
             <Row>
             <Form.Label for='email'>Enter your email address:{" "}
@@ -111,6 +113,7 @@ const Register = () => {
             <br />
             <p>Already have an account?  Log in here: <a href="/login">Login</a></p>
             <a href="/">Home</a>
+            </Container>
         </Form>
     )
 
