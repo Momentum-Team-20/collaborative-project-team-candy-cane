@@ -8,9 +8,10 @@ import NavBar from "./NavBar";
 const UserPage = (props) => {
   const [userCards, setUserCards] = useState([]);
   const [showFollowers, setShowFollowers] = useState([]);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-// do a thing
+    // do a thing
 
     axios
       .get(
@@ -27,8 +28,7 @@ const UserPage = (props) => {
         setUserCards(results.data);
       });
 
-
-      axios
+    axios
       .get(
         "https://social-cards.fly.dev/api/users/followed",
 
@@ -40,15 +40,31 @@ const UserPage = (props) => {
       )
       .then((results) => {
         console.log("this is followers results", results);
-        setShowFollowers(results.data.results)
+        setShowFollowers(results.data.results);
       });
   }, [props.token]);
 
-  const [expanded, setExpanded] = useState(false);
   const handleFollowerListExpandedClick = () => {
     setExpanded(!expanded);
   };
 
+  const handleUnfollowUserClick = (followerID) => {
+    axios
+      .delete(
+        `https://social-cards.fly.dev/api/unfollow/${followerID}`,
+        {
+          headers: {
+            Authorization: `Token ${props.token}`,
+          },
+        }
+      )
+      .then((results) => {
+        console.log("this is deleted, maybe?", results);
+      }, [])
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <>
@@ -59,17 +75,25 @@ const UserPage = (props) => {
         </h1>
         {/* link to followers list below */}
         <div className="userPageFollowingText">
-          <h2>Who is {props.username} following?{" "}</h2>
-        <button onClick={handleFollowerListExpandedClick} className="followingButton" >
-          {expanded ? "Hide Following" : "Show Following"}
-        </button>
-        {expanded && (
-          <div className="userPageFollowingText">{showFollowers.map((follower) => (
-            <div key={follower.id}>{follower.username}</div>
-            ))}</div>
-            )}
+          <h2>Who is {props.username} following? </h2>
+          <button
+            onClick={handleFollowerListExpandedClick}
+            className="followingButton"
+          >
+            {expanded ? "Hide Following" : "Show Following"}
+          </button>
+          {expanded && (
+            <div className="userPageFollowingText">
+              {showFollowers.map((follower) => (
+                <div key={follower.id}>
+                  {follower.username}
+                  <button onClick={() => handleUnfollowUserClick(follower.id)}>Unfollow?</button>
+                </div>
+              ))}
             </div>
-            <br></br>
+          )}
+        </div>
+        <br></br>
         <div className="userPageCardContainer">
           {/* the button below needs to be routed to CreateCard */}
           <div className="userCards">
@@ -88,6 +112,7 @@ const UserPage = (props) => {
                     font={card.font}
                     font_size={card.font_size}
                     text_align={card.text_align}
+                    show_follow_button={false}
                 />
               );
             })}

@@ -1,6 +1,6 @@
 .navBar {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   border: 2px solid black;
 }
 
@@ -25,6 +25,14 @@
   border: 1px solid black;
 }
 
+.centerAllCards {
+  display: grid;
+  justify-content: center;
+}
+
+h1 {
+  text-align: end;
+}
 
 .Rubik {
   font-family: 'Rubik Scribble', sans-serif;
@@ -73,17 +81,6 @@
   text-align: end;
 }
 
-/* .red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
-} */
 
 /* User Page CSS */
 

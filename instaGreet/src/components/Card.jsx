@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ReactCard from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
-const Card = ({ key, front_text, background_color, creator, token, creatorID, font, font_size, text_align }) => { 
+const Card = ({ key, front_text, background_color, creator, token, creatorID, font, font_size, text_align, show_follow_button }) => { 
 
 
   console.log("this is key", key);
@@ -10,6 +13,7 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
   console.log("this is background_color", background_color);
   console.log('the font is:', font)
 
+  //we need to know who a logged in user follows in order to display a follow or unfollow button -- that might be our status
 
   const handleFollowUserClick = () => {
     axios
@@ -40,10 +44,16 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
           >
             <ReactCard.Text className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</ReactCard.Text>
           </ReactCard>
-          <button onClick={handleFollowUserClick}>Follow {creator}</button>
+          <Row>
+            <Col>
+          <p>{creator}</p>
+          </Col>
+          <Col>
+          <Button onClick={handleFollowUserClick}>Follow {creator}</Button>
+          </Col>
+          </Row>
       </div>
     </>
   );
 };
-
 export default Card;
