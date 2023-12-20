@@ -46,10 +46,10 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
           </ReactCard>
           <Row>
             <Col>
-          <p>{creator}</p>
+          <p className="creatorName">{creator}</p>
           </Col>
-          <Col>
-          <Button onClick={handleFollowUserClick}>Follow {creator}</Button>
+          <Col className="followButton">
+          <Button onClick={handleFollowUserClick}>Follow</Button>
           </Col>
           </Row>
       </div>

@@ -2,6 +2,7 @@ import Card from "./Card";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import NavBar from "./NavBar";
+import Button from 'react-bootstrap/Button';
 
 //we need to pass username and token in through props
 
@@ -70,24 +71,24 @@ const UserPage = (props) => {
     <>
       <NavBar />
       <div className="userPageContainer">
-        <h1 className="userPageTitle">
+        <h1 className="instagreetTitle">
           {props.username}&#39;s InstaGreet Page
         </h1>
         {/* link to followers list below */}
         <div className="userPageFollowingText">
           <h2>Who is {props.username} following? </h2>
-          <button
+          <Button
             onClick={handleFollowerListExpandedClick}
             className="followingButton"
           >
             {expanded ? "Hide Following" : "Show Following"}
-          </button>
+          </Button>
           {expanded && (
             <div className="userPageFollowingText">
               {showFollowers.map((follower) => (
                 <div key={follower.id}>
                   {follower.username}
-                  <button onClick={() => handleUnfollowUserClick(follower.id)}>Unfollow?</button>
+                  <Button onClick={() => handleUnfollowUserClick(follower.id)}>Unfollow?</Button>
                 </div>
               ))}
             </div>

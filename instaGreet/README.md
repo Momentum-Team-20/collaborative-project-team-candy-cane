@@ -1,8 +1,38 @@
-# React + Vite
+# Welcome to instaGreet : A pet-friendly greeting card app!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+All animals (including humans) are welcome to use our app to make adorable greeting cards for themselves and each other.
 
-Currently, two official plugins are available:
+## Our deploy link is:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://main--musical-caramel-6ed60f.netlify.app/
+
+## Instructions for running the application locally:
+
+You will need to install these dependencies:
+
+*for npm node version 20.7.0 or newer*
+
+**axios: ^1.6.2**
+
+    `npm install axios`
+
+**react-bootstrap: ^2.9.1**
+
+    `npm install react-bootstrap bootstrap`
+
+**react: ^18.2.0**
+
+    `npm create vite@latest`
+
+**react-router-dom: ^6.21.0**
+
+    `npm install react-router-dom`
+
+**use-local-storage-state: ^19.1.0**
+
+    `npm install use-local-storage-state`
+
+**validator: ^13.11.0**
+
+    `npm install validator`
+

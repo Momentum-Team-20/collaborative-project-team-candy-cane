@@ -103,8 +103,6 @@ const handleSubmit = (e) => {
                         <option>center</option>
                         <option>left</option>
                         <option>right</option>
-                        <option>top</option>
-                        <option>bottom</option>
                         </Form.Select>
                     </Form.Label>
                 </Form.Group>
