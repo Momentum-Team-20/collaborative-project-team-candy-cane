@@ -106,10 +106,13 @@ const UserPage = (props) => {
             {userCards.map((card) => {
               return (
                 <Card
-                  key={card.id}
-                  front_text={card.front_text}
-                  background_color={card.background_color}
-                  show_follow_button={false}
+                    key={card.id}
+                    front_text={card.front_text}
+                    background_color={card.background_color}
+                    font={card.font}
+                    font_size={card.font_size}
+                    text_align={card.text_align}
+                    show_follow_button={false}
                 />
               );
             })}

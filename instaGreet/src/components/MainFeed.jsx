@@ -8,6 +8,7 @@ import Register from "./Registration";
 import NavBar from "./NavBar";
 import CreateCard from "./CreateCard";
 import { useNavigate } from "react-router-dom";
+import Stack from 'react-bootstrap/Stack';
 
 const MainFeed = ({ token, setCardID }) => {
   const [cardInfo, setCardInfo] = useState([]);
@@ -58,7 +59,7 @@ const MainFeed = ({ token, setCardID }) => {
         <NavBar />
       )}
       <h1>Cards</h1>
-      <div>
+      <div className="centerAllCards" >
         {/* // <p>{cardInfo}</p> */}
         {cardInfo.map((card) => {
           const foundUser = following.find(

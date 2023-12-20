@@ -1,11 +1,11 @@
 .navBar {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   border: 2px solid black;
 }
 
 .cardFrame{
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
   height: 350px;
   width: 320px;
 }
@@ -25,9 +25,15 @@
   border: 1px solid black;
 }
 
-/* .frontCardText {
-  display: flex;
-} */
+.centerAllCards {
+  display: grid;
+  justify-content: center;
+}
+
+h1 {
+  text-align: end;
+}
+
 .Rubik {
   font-family: 'Rubik Scribble', sans-serif;
 }
@@ -38,6 +44,10 @@
 
 .Quicksand {
   font-family: 'Quicksand', sans-serif;
+}
+
+.Whisper {
+  font-family: 'Whisper', cursive;
 }
 
 .small {
@@ -71,17 +81,6 @@
   text-align: end;
 }
 
-/* .red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
-} */
 
 /* User Page CSS */
 

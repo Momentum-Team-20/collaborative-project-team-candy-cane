@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useNavigate, useOutletContext } from 'react-router-dom'
+// import Form from 'react-bootstrap/Form'
 
 
 const Login = ({ setAuth }) => {
@@ -30,6 +31,7 @@ const Login = ({ setAuth }) => {
     return(
         <>
       {error && <p style={{ color: 'red' }}> {error} </p>}
+      {/* <Form> */}
       <form onSubmit={handleSubmit}>
         <div className="form-controls">
           <label htmlFor="username-field">username</label>
@@ -51,6 +53,7 @@ const Login = ({ setAuth }) => {
           <input type="submit" value="Log In" />
         </div>
       </form>
+      {/* </Form> */}
       <p>New User?  Create an account here: <a href="/register">Registration</a></p>
       <a href="/">Home</a>
     </>

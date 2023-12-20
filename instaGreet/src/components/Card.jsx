@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import ReactCard from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 
 const Card = ({ key, front_text, background_color, creator, token, creatorID, font, font_size, text_align, show_follow_button }) => { 
 
-  // useEffect((e) => {
-  //     e.preventDefault()
-  //     axios.get("https://social-cards.fly.dev/api/cards").then((res) => {
-  //         setCardInfo(res.data)
-  //         console.log(res.data)
-  //     } )
-  // })
 
   console.log("this is key", key);
   console.log("this is front_text", front_text);
@@ -41,14 +38,20 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
   return (
     <>
       <div className="cardFrame">
-          <div
-            style={{ backgroundColor: `${background_color}` }}
+          <ReactCard
+            style={{ height: '300px', backgroundColor: `${background_color}` }}
             className={`${background_color} outerCardDiv`}
           >
-            <p className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</p>
-          </div>
-          {show_follow_button && 
-          <button onClick={handleFollowUserClick}>Follow {creator}</button>}
+            <ReactCard.Text className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</ReactCard.Text>
+          </ReactCard>
+          <Row>
+            <Col>
+          <p>{creator}</p>
+          </Col>
+          <Col>
+          <Button onClick={handleFollowUserClick}>Follow {creator}</Button>
+          </Col>
+          </Row>
       </div>
     </>
   );
