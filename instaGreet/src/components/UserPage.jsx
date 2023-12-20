@@ -109,6 +109,7 @@ const UserPage = (props) => {
                   key={card.id}
                   front_text={card.front_text}
                   background_color={card.background_color}
+                  show_follow_button={false}
                 />
               );
             })}
