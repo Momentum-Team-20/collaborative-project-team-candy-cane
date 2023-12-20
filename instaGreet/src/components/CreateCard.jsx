@@ -46,6 +46,7 @@ const handleSubmit = (e) => {
     return(
         <>
         <NavBar />
+        <h1 className="instagreetTitle">Create a Card!</h1>
         <Container>
         <Card 
         front_text={form.front_text}
