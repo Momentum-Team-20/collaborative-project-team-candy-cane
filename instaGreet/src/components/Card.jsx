@@ -35,7 +35,7 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
     <>
       <div className="cardFrame">
           <ReactCard
-            style={{ backgroundColor: `${background_color}` }}
+            style={{ height: '300px', backgroundColor: `${background_color}` }}
             className={`${background_color} outerCardDiv`}
           >
             <ReactCard.Text className={`${font} ${font_size} ${text_align} frontCardText`}>{front_text}</ReactCard.Text>

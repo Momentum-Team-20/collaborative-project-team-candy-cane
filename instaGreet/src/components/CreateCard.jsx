@@ -13,7 +13,6 @@ const CreateCard = ({token}) => {
 })
 const navigate = useNavigate()
 
-// add .lowercase
 const handleChange = (e) => {
     setForm({
         ...form,
@@ -39,14 +38,11 @@ const handleSubmit = (e) => {
     return(
         <>
         <NavBar />
-            <p>This is the Create Card Page</p>
             <form method="post" onSubmit={handleSubmit}>
                 <label> Greeting:<input id="front_text" value={form.front_text} onChange={handleChange} /></label>
                 
                 <label htmlFor="background_color">Color Picker:</label>
                 <input type="color" id="background_color" value={"#ffffff"} onChange={handleChange}/>
-                {/* <label>Background Image:<input id="imageURL" value={form.imageURL} onChange={handleChange}/>
-                </label> */}
                 <label>Font:
                     <select id="font" onChange={handleChange}>
                         <option>------</option>
