@@ -3,6 +3,10 @@ import axios from 'axios'
 import validator from 'validator'
 import NavBar from './NavBar'
 import{ useNavigate, useOutletContext } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 //TODO:
 // Add post request, and validation to ensure username isn't taken and email not already in use
@@ -67,32 +71,47 @@ const Register = () => {
     }
 
     return (
-        <>
-            <h1>New User Registration</h1>
+        <Form>
+            <h1 className="instagreetTitle">New User Registration</h1>
             {error && <p style={{ color: 'red' }}> {error} </p>}
-            <p>Enter your email address:</p>
-            <label for='email'>
-                <p>Email:</p>
-                <input type="email" name="email" onChange={updateEmail} maxLength={254}></input>
-            </label>
+            <Col xs={5}>
+            <Row>
+            <Form.Label for='email'>Enter your email address:{" "}
+            <br />
+            <br />
+                <Form.Control type="email" name="email" onChange={updateEmail} maxLength={254}></Form.Control>
+            </Form.Label>
+            </Row>
+            <br />
+            <br />
             <p>Please type a username and password: </p>
-            <label for='userName'>    
-                <p>Username:</p>
-                <input type='text' name='userName' onChange={updateUserName} maxLength={150} required></input>
-            </label>
-            <label for='password'>    
-                <p>Password:</p>
-                <input type='password' name='password' onChange={updatePassword}></input>
-            </label>
-            <label for='confPass'>    
-                <p>Confirm Password:</p>
-                <input type='password' name='confPassword' onChange={updatePasswordConf}></input>
-            </label>
-            <br></br>
-            <button onClick={submitToDB}>Submit</button>
+            <Row>
+            <Form.Label for='userName'>    
+                Username:
+                <Form.Control type='text' name='userName' onChange={updateUserName} maxLength={150} required></Form.Control>
+            </Form.Label>
+            </Row>
+            <Row>
+            <Form.Label for='password'>    
+                Password:
+                <Form.Control type='password' name='password' onChange={updatePassword}></Form.Control>
+            </Form.Label>
+            </Row>
+            <Row>
+            <Form.Label for='confPass'>    
+                Confirm Password:
+                <Form.Control type='password' name='confPassword' onChange={updatePasswordConf}></Form.Control>
+            </Form.Label>
+            </Row>
+            </Col>
+            <br />
+            <br />
+            <Button onClick={submitToDB}>Submit</Button>
+            <br />
+            <br />
             <p>Already have an account?  Log in here: <a href="/login">Login</a></p>
             <a href="/">Home</a>
-        </>
+        </Form>
     )
 
 }

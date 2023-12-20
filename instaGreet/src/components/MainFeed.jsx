@@ -58,7 +58,7 @@ const MainFeed = ({ token, setCardID }) => {
       ) : (
         <NavBar />
       )}
-      <h1>Cards</h1>
+      <h1 className="instagreetTitle">instaGreet</h1>
       <div className="centerAllCards" >
         {/* // <p>{cardInfo}</p> */}
         {cardInfo.map((card) => {
