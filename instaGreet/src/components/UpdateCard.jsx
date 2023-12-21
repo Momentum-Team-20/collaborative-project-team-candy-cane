@@ -3,6 +3,7 @@ import axios from 'axios'
 import Card from './Card'
 import NavBar from "./NavBar";
 import { useNavigate, useParams } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 
 const UpdateCard = ({ token, setCardID, username }) => {
@@ -86,7 +87,7 @@ const handleSubmit = (e) => {
                     <option>bottom</option>
                     </select>
                 </label>
-                <button type="submit">Post!</button>
+                <Button className="ms-2" type="submit">Post!</Button>
             </form>
             <Card 
                 front_text={form.front_text}
