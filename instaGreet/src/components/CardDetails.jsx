@@ -5,6 +5,8 @@ import { useState, useEffect } from "react"
 import NavBar from "./NavBar"
 import Container from 'react-bootstrap/Container'
 import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 const CardDetails = ({ token, setCardID, username }) => {
     const [card, setCard] = useState([])
@@ -36,7 +38,8 @@ const CardDetails = ({ token, setCardID, username }) => {
         return (
             <>
             <NavBar />
-            <Container>
+            <Container className="d-flex justify-content-center">
+            <Row>
                 <Card 
                     key={card.id}
                     front_text={card.front_text}
@@ -46,6 +49,7 @@ const CardDetails = ({ token, setCardID, username }) => {
                     font_size={card.font_size}
                     text_align={card.text_align}
                 />
+            </Row>
             </Container>
             </>
 
@@ -56,7 +60,7 @@ const CardDetails = ({ token, setCardID, username }) => {
     return (
         <>
         <NavBar />
-        <Container>
+        <Container className="centerAllCards" >
             <Card 
                 key={card.id}
                 front_text={card.front_text}
@@ -66,8 +70,14 @@ const CardDetails = ({ token, setCardID, username }) => {
                 font_size={card.font_size}
                 text_align={card.text_align}
             />
-            <Button className="me-2" onClick={((e) => goToUpdate(e, card))}>Update</Button>
-            <Button onClick={((e) => goToDelete(e, card))}>Delete</Button>
+            <Row>
+                <Col>
+                    <Button className="me-2" onClick={((e) => goToUpdate(e, card))}>Update</Button>
+                </Col>
+                <Col className="followButton">
+                    <Button onClick={((e) => goToDelete(e, card))}>Delete</Button>
+                </Col>
+            </Row>
         </Container>
         </>
     )

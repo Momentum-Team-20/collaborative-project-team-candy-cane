@@ -4,10 +4,12 @@ import axios from "axios";
 import Card from "./Card";
 import NavBar from "./NavBar";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-const FollowingFeed = ({ token }) => {
+const FollowingFeed = ({ token, setCardID }) => {
   const [followingIDs, setFollowingIDs] = useState([]);
   const [getCards, setGetCards] = useState([]);
+  const navigate = useNavigate()
   
   useEffect(() => {
     axios
@@ -33,6 +35,13 @@ const FollowingFeed = ({ token }) => {
     });
   }, [token]);
 
+  const goToDetails = (event, card) => {
+    const key = card.id;
+    setCardID(key);
+    console.log(`Card Id in key ${key}`);
+    navigate(`/card-details/${key}`);
+  };
+
   console.log("This is following feed");
   return (
     <>
@@ -46,6 +55,7 @@ const FollowingFeed = ({ token }) => {
               if (following.username === card.creator)
                 return (
                   <>
+                  <div onClick={(e) => goToDetails(e, card)} value={card.id}>
                     <Card
                       key={card.id}
                       front_text={card.front_text}
@@ -57,6 +67,7 @@ const FollowingFeed = ({ token }) => {
                       font_size={card.font_size}
                       text_align={card.text_align}
                     />
+                    </div>
                   </>
                 );
             })}
