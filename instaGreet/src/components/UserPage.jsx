@@ -88,7 +88,7 @@ const UserPage = (props) => {
               {showFollowers.map((follower) => (
                 <div key={follower.id}>
                   {follower.username}
-                  <Button onClick={() => handleUnfollowUserClick(follower.id)}>Unfollow?</Button>
+                  <Button className="my-2 ms-2" onClick={() => handleUnfollowUserClick(follower.id)}>Unfollow?</Button>
                 </div>
               ))}
             </div>

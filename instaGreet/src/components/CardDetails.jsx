@@ -3,6 +3,8 @@ import Card from "./Card"
 import { useParams, useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react"
 import NavBar from "./NavBar"
+import Container from 'react-bootstrap/Container'
+import Button from 'react-bootstrap/Button'
 
 const CardDetails = ({ token, setCardID, username }) => {
     const [card, setCard] = useState([])
@@ -34,13 +36,19 @@ const CardDetails = ({ token, setCardID, username }) => {
         return (
             <>
             <NavBar />
+            <Container>
                 <Card 
                     key={card.id}
                     front_text={card.front_text}
                     background_color={card.background_color}
                     creator={card.creator}
+                    font={card.font}
+                    font_size={card.font_size}
+                    text_align={card.text_align}
                 />
+            </Container>
             </>
+
         )
 
     }
@@ -48,14 +56,19 @@ const CardDetails = ({ token, setCardID, username }) => {
     return (
         <>
         <NavBar />
+        <Container>
             <Card 
                 key={card.id}
                 front_text={card.front_text}
                 background_color={card.background_color}
                 creator={card.creator}
+                font={card.font}
+                font_size={card.font_size}
+                text_align={card.text_align}
             />
-            <button onClick={((e) => goToUpdate(e, card))}>Update</button>
-            <button onClick={((e) => goToDelete(e, card))}>Delete</button>
+            <Button className="me-2" onClick={((e) => goToUpdate(e, card))}>Update</Button>
+            <Button onClick={((e) => goToDelete(e, card))}>Delete</Button>
+        </Container>
         </>
     )
 }
