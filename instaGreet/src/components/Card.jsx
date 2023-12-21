@@ -49,7 +49,8 @@ const Card = ({ key, front_text, background_color, creator, token, creatorID, fo
           <p className="creatorName">{creator}</p>
           </Col>
           <Col className="followButton">
-          <Button onClick={handleFollowUserClick}>Follow</Button>
+          {show_follow_button && (
+          <Button onClick={handleFollowUserClick}>Follow</Button>)}
           </Col>
           </Row>
       </div>

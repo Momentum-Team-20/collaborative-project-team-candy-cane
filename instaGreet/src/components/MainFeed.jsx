@@ -66,7 +66,7 @@ const MainFeed = ({ token, setCardID }) => {
             (user) => user.id === card.creator_id
           );
           console.log(foundUser);
-          let show_follow_button;
+          let show_follow_button
           if (foundUser === undefined) {
             show_follow_button = true;
           } else {
