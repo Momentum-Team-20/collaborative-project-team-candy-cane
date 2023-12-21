@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import NavBar from "./NavBar";
 import Button from 'react-bootstrap/Button';
+import { useNavigate } from "react-router-dom";
 
 //we need to pass username and token in through props
 
@@ -10,6 +11,7 @@ const UserPage = (props) => {
   const [userCards, setUserCards] = useState([]);
   const [showFollowers, setShowFollowers] = useState([]);
   const [expanded, setExpanded] = useState(false);
+  const navigate = useNavigate()
 
   useEffect(() => {
     // do a thing
@@ -67,6 +69,13 @@ const UserPage = (props) => {
       });
   };
 
+  const goToDetails = (event, card) => {
+    const key = card.id;
+    props.setCardID(key);
+    console.log(`Card Id in key ${key}`);
+    navigate(`/card-details/${key}`);
+  };
+
   return (
     <>
       <NavBar />
@@ -106,6 +115,7 @@ const UserPage = (props) => {
             {/* hide the button */}
             {userCards.map((card) => {
               return (
+                <div onClick={(e) => goToDetails(e, card)} value={card.id}>
                 <Card
                     key={card.id}
                     front_text={card.front_text}
@@ -115,6 +125,7 @@ const UserPage = (props) => {
                     text_align={card.text_align}
                     show_follow_button={false}
                 />
+                </div>
               );
             })}
           </div>
